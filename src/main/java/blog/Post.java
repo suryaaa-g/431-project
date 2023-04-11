@@ -27,13 +27,13 @@ public class Post {
         this.userName = userName;
     }
 
-    public Post(String pTitle, String pContent, Timestamp pDate, int catId, String userName) {
+    public Post(String pTitle, String pContent, Timestamp pDate, String userName) {
         this.pTitle = pTitle;
         this.pContent = pContent;
 //        this.pCode = pCode;
 //        this.pPic = pPic;
         this.pDate = pDate;
-        this.catId = catId;
+       // this.catId = catId;
         this.userName = userName;
     }
 

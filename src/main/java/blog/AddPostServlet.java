@@ -50,7 +50,7 @@ public class AddPostServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
-            int cid = Integer.parseInt(request.getParameter("cid"));
+           // int cid = Integer.parseInt(request.getParameter("cid"));
             String pTitle = request.getParameter("pTitle");
             String pContent = request.getParameter("pContent");
             //String pCode = request.getParameter("pCode");
@@ -61,7 +61,7 @@ public class AddPostServlet extends HttpServlet {
 
            // out.println("your post title is " + pTitle);
 //            out.println(part.getSubmittedFileName());
-            Post p = new Post(pTitle, pContent, null, cid, user);
+            Post p = new Post(pTitle, pContent, null, user);
             PostDao dao = new PostDao(ConnectionProvider.getConnection());
             if (dao.savePost(p)) {//
 
