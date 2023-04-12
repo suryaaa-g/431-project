@@ -21,36 +21,41 @@
 	</style>
 	<body>
 		<div class = 'navbar'>
-			<a href='../rutgersMain.jsp' class='active'>Home</a>
-			<div class = 'dropdown'>
+			<a href='rutgersMain.jsp' class='active'>Home</a>
+			 <div class = 'dropdown'>
 				<button class='dropbtn'>Create a new listing</button>
 					<div class='dropdown-content'>
-						<a href='itemListing.jsp'>Sell an Item</a>
+						<a href='itemListing.jsp'>Create a Item Listing</a>
 						<a href='serviceListing.jsp'>Offer a service</a>
-						<!-- <a href='truckListing.jsp'>Trucks</a> -->
+						<!-- <a href='CreateAuction/truckListing.jsp'>Trucks</a> -->
 					</div>
-			</div>
+			</div> 
 			<div class='dropdown'>
-				<button class='dropbtn'>Browse Active listings</button>
+				<button class='dropbtn'>Browse active Rutgers listings</button>
 				<div class='dropdown-content'>
-					<a href='../BrowseAuctions/endSedanParams.jsp'>Sedans</a>
-					<a href='../BrowseAuctions/endBikeParams.jsp'>Bikes</a>
-					<a href='../BrowseAuctions/endTruckParams.jsp'>Trucks</a>
+			   <a href='../BrowseItems/browseProducts.jsp'>Browse Items</a> 
+					<!--  <a href='../GetImageServlet'>Browse Items</a> -->
+					<a href='../BrowseItems/browseServices.jsp'>Browse Services</a>
+					<!-- <a href='BrowseAuctions/endTruckParams.jsp'>Trucks</a>  -->
 				</div>
 			</div>
-			<div class='dropdown'>
-				<button class='dropbtn'>Browse Items</button>
-				<div class='dropdown-content'>
-					<a href='../BrowseItems/endSedanParams.jsp.jsp'>Sedans</a>
-					<a href='../BrowseItems/endBikeParams.jsp.jsp'>Bikes</a>
-					<a href='../BrowseItems/endTruckParams.jsp'>Trucks</a>
-				</div>
-			</div>
-			<a href='../BidHistory/searchAuctionHistory.jsp'>Browse Auction Bid Histories</a>
-			<a href='../UserHistory/searchUserHistory.jsp'>Browse User Histories</a>
+		<!-- 	<div class='dropdown'>
+				<button class='dropbtn'>Browse All Active Listings?</button> -->
+				<!-- <div class='dropdown-content'> -->
+					<!-- <a href='BrowseVehicles/endSedanParams.jsp'>Sedans</a>
+					<a href='BrowseVehicles/endBikeParams.jsp'>Bike</a>
+					<a href='BrowseVehicles/endTruckParams.jsp'>Trucks</a> -->
+				<!-- </div> -->
+<!-- 			</div>
+ -->		<a href='../../Blog/blogHome.jsp'>Blog</a>
+			<a href='../SalesReport/userSales.jsp'>My Sales</a>
+			<a href='../GroupMe/GroupMeList.jsp'>Rutgers Group Me Chats</a>
+			<a href='../Courses/courses.jsp'>Courses</a>
 			<a href='../CustomerService/endCustomerService.jsp'>Customer Service</a>
-			<!-- <a href='../Profile/endProfile.jsp'>Profile</a> -->
-			<a href='../../logout.jsp' style='float:right'>Log out</a>
+			<a href='../../MyBuyServlet'>My Buys</a>
+			
+			<!-- <a href='../../deleteAccount/deleteAccount.jsp'>Delete Account</a> -->
+			<a href='../logout.jsp' style='float:right'>Log out</a>
 		</div>
 		<div class='back'>
 			<h1>Create a new Service listing</h1>

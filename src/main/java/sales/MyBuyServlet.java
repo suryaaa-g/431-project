@@ -77,65 +77,44 @@ public class MyBuyServlet extends HttpServlet {
 	        
 	       
 	        	// rs=st.executeQuery("select sum(s.final_price) as total from sold s where buyer <> ''");
-	        	String query = "select * from items i natural join sold s where buyer = ?";
+	        	String query = "select * from items i natural join sold s where s.buyer <> ''";
+	        	rs2=st.executeQuery(query);
+//	        	ps = con.prepareStatement(query);
+//	        	ps.setString(1, user);
+//	        	rs2 = ps.executeQuery();
+	        	//rs2.next();
 	        	
-	        	ps = con.prepareStatement(query);
-	        	ps.setString(1, user);
-	        	rs2 = ps.executeQuery();
-	        	rs2.next();
 	        	
 	        	
+
+	        	 
+	        	out.println("<table>");
+	        	out.println("<tr>");
+	        	out.println("<th colspan=\"4\">My Buys</th>");
+	        	out.println("</tr>");
+	        	out.println("<tr>");
+	        	out.println("<th>Item Id</th>");
+	        	out.println("<th>Product Name</th>");
+	        	out.println("<th>Product Location</th>");
+	        	out.println("<th>Product Description</th>");
+	        	out.println("<th>Final Price</th>");
+	        	out.println("</tr>");
 	        	 
 	        	 
-	        	 out.println(" <table>\n"
-	        	 		+ "                 <tr>\n"
-	        	 		+ "                    <th>My Buys</th>\n"
-	        	 		+ "                 </tr>");
-	        	 
-	        	 while(rs2.next()) {
-	        		 out.println("<tr>");
-	        		 out.println("<td>" + user + "</td>");
-	        		 out.println("</tr>");
-	        		 
-	        		 out.println(" </table><br>");
-	        		 
-	        		
-	        		 
-	        		 
-	   
-	        		 
-	        	 }
-	        	
+	        	while (rs2.next()) {
+	        	    out.println("<tr>");
+	        	    out.println("<td>" + rs2.getString("item_id") + "</td>");
+	        	    out.println("<td>" + rs2.getString("prod_name") + "</td>");
+	        	    out.println("<td>" + rs2.getString("prod_loc") + "</td>");
+	        	    out.println("<td>" + rs2.getString("product_desc") + "</td>");
+	        	    out.println("<td>" + rs2.getString("final_price") + "</td>");
+	        	    out.println("</tr>");
+	        	}
+
+	        	out.println("</table><br>");
+		}
 	 	
-	 	        	 	
-	        	while(rs2.next()) {
-	        		
-	        		 out.println("                 <tr>");
-	        		// out.println("<tr> ");
-	        		 out.println("<td>" + rs2.getString("item_id") + "</td>");
-	        	//	 out.println("</tr>");
-	        		 
-	        		 
-	        		 //out.println("<tr>");
-	        		 out.println("<td>" + rs2.getString("prod_name") + "</td>");
-	        		// out.println("</tr>");
-	        		 
-	        		 //out.println("<tr>");
-	        		 out.println("<td>" + rs2.getString("prod_loc") + "</td>");
-	        		// out.println("</tr>");
-	        		 
-	        		 //out.println("<tr>");
-	        		 out.println("<td>" + rs2.getString("product_desc") + "</td>");
-	        		// out.println("</tr>");
-	        		 
-	        		
-	        		 
-	        		 out.println("<td>" + rs2.getString("final_price") + "</td>");
-	        	 }
-	        	 
-	        	 out.println("                 </tr>");
-	        }
-	        
+	 	       
 //	        else if(dataType.equals("best_items")) {
 //	        	 rs=st.executeQuery("select a.item_id, sum(s.final_price) as total from listings a natural join sold s where s.buyer <> '' group by a.item_id order by total desc");
 //	        	 
@@ -187,7 +166,7 @@ public class MyBuyServlet extends HttpServlet {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-	    out.println("<a href='End/rutgersMain.jsp'>Go back to Generate Sales Report Page</a>");
+	    out.println("<a href='End/rutgersMain.jsp'>Go Back to main page</a>");
         out.println("</body>");
 	}
 	

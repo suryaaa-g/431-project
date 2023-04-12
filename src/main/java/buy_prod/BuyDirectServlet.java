@@ -132,7 +132,7 @@ public class BuyDirectServlet extends HttpServlet {
 					
 					else if(amountFloat == curr_price) {
 						
-						out.println("You have successfully purchased " + prod_name  );
+						out.println("You have successfully purchased " + prod_name + "There are: " + thisListing );
 						
 						
 						out.println(" Enter your address details\n");

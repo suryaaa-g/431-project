@@ -129,7 +129,7 @@ public class AddItemServlet extends HttpServlet {
 			else {
 				
 				
-				ResultSet lastID = st.executeQuery("select max(item_id) highest from listings");
+				ResultSet lastID = st.executeQuery("select max(item_id) highest from items");
 				lastID.next();
 				Integer newListingID = lastID.getInt("highest");
 				

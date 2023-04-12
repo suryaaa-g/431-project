@@ -1,25 +1,25 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="java.util.*" %>
-<%-- <%
+<%
 
 Class.forName("com.mysql.cj.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/buyMe","root", "PASSWORD");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ru_amazon","root", "PASSWORD");
 Statement st = con.createStatement();
 Statement st2 = con.createStatement();
 ResultSet rs, rs2;
 
 String user = (String)session.getAttribute("user");
 rs = st.executeQuery("select a.alert_message from alerts a where a.uname = '" + user + "'");
-rs2 = st2.executeQuery("select name, current_price, end_date from auctions natural join items "
-	+ "where end_date > now() and seller = '" + user + "'");
+rs2 = st2.executeQuery("select prod_name, current_price from listings natural join items "
+	+ "where seller = '" + user + "'");
 
-%> --%>
+%> 
 <!DOCTYPE html>
 <html>
 	<head>
 	<link rel='stylesheet' href='../CSS/main.css'>
 	 <link rel='stylesheet' href='../CSS/navbar.css'>
-	 <link rel='stylesheet' href='end.css'>
+	 
 	 
 	 	<style>
 	 	
@@ -64,7 +64,7 @@ rs2 = st2.executeQuery("select name, current_price, end_date from auctions natur
 			<a href='CustomerService/endCustomerService.jsp'>Customer Service</a>
 			<a href='../MyBuyServlet'>My Buys</a>
 			
-			<a href='deleteAccount/deleteAccount.jsp'>Delete Account</a>
+			<!-- <a href='deleteAccount/deleteAccount.jsp'>Delete Account</a> -->
 			<a href='../logout.jsp' style='float:right'>Log out</a>
 		</div>
 		<h1>Welcome to the Rutgers Scholar Commons.</h1>
@@ -73,7 +73,7 @@ rs2 = st2.executeQuery("select name, current_price, end_date from auctions natur
 		<div class='center-collapse'>
 			<button class='collapsible'>Your Alerts</button>
 			<div class='collapsible-content'>
-			<%-- <% if (!rs.isBeforeFirst() ) { %>
+			<% if (!rs.isBeforeFirst() ) { %>
 				<p>You have no alerts at this time.</p>
 			<% } else { %>
 				<table>
@@ -83,28 +83,29 @@ rs2 = st2.executeQuery("select name, current_price, end_date from auctions natur
 					</tr>
 					<% } %>
 				</table>
-			<% } %> --%>
+			<% } %> 
 			</div>
-			<button class='collapsible' class='text-center'>Your Auctions</button>
+			<button class='collapsible' class='text-center'>Your Listings</button>
 			<div class='collapsible-content'>
-			<%-- <% if (!rs2.isBeforeFirst() ) { %>
-				<p>You currently have no live auctions.</p>
-			<% } else { %>
+			<% if (!rs2.isBeforeFirst() ) { %>
+				<p>You currently have no listings.</p>
+			<% } 
+			else { %>
 				<table>
 					<tr>
 						<th>Item</th>
 						<th>Current Bid</th>
-						<th>End Date</th>
+						
 					<tr>
 					<% while (rs2.next()) { %>
 					<tr>
-						<td><%= rs2.getString("name") %></td>
+						<td><%= rs2.getString("prod_name") %></td>
 						<td>$<%= rs2.getString("current_price") %></td>
-						<td><%= rs2.getString("end_date") %></td>
+						>
 					</tr>
 					<% } %>
 				</table>
-			<% } %> --%>
+			<% } %> 
 			</div>
 		</div>
 		
