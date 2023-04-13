@@ -86,6 +86,7 @@ public class AddItemServlet extends HttpServlet {
 	             
 	        // obtains input stream of the upload file
 	       inputStream = filePart.getInputStream();
+	     
 		}
 		
 		
