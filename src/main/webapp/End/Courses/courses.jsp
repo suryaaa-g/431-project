@@ -11,8 +11,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		 <link rel='stylesheet' href='groupmelist.css'>
 	
+		 <link rel='stylesheet' href='groupmelist.css'>
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 	
 		<title>Courses</title>
 		
 		<style>
@@ -28,18 +30,24 @@
 			tr:nth-child(even) {
 				background-color: #f2f2f2;
 			}
-			body{background: #FFFAF0;}
-			
-			tr.urgent td{ background-color :red; }
-		    tr.warning td{ background-color : yellow; }
-		    tr.okay td{ background-color : green; }
-		    
+			body{
+				background: #FFFAF0;
+			}
+			tr.urgent td{ 
+				background-color :red; 
+			}
+		    tr.warning td{ 
+		    	background-color : yellow; 
+		    }
+		    tr.okay td{ 
+		    	background-color : green; 
+		    }
 		    td {
 			   white-space:nowrap;
 			   border: 1px solid black;
 			   max-width: 300px;
 			   overflow-y:hidden;
-				}
+			}
 		</style>
 	</head>
 	
@@ -72,7 +80,7 @@ else{
 
 // Create the query and insert the proper values afterwards
 %>
-<form method="post" action="courses.jsp">
+<%-- <form method="post" action="courses.jsp">
 
     
 
@@ -98,7 +106,21 @@ else{
 	
 
    
-    </div>
+    </div> --%>
+    <body>
+    <a href="../rutgersMain.jsp">Return to Main Page</a>
+		<div class="container">
+			<h2 align="center"><strong>Courses</strong></h2>
+			<form method="post" action="courses.jsp">
+				<div class="form-group">
+					<label for="course_id">Search Course ID:</label>
+					<input type="text" name="course_id" id="course_id" class="form-control" placeholder="Enter Course ID">
+				</div>
+				<button type="submit" name="save" class="btn btn-primary">Search</button>
+				<% if(search != null){ %>
+					<button type="submit" class="btn btn-secondary" onclick="location.href='courses.jsp'">Clear Search</button>
+				<% } %>
+			</form>
 <table border=1 frame=void rules=rows>
 
 	<tr bgcolor="#DEB887"> 
@@ -265,7 +287,7 @@ while(rs.next()){
 
 	
 
-<a href="../rutgersMain.jsp">Return to Main Page</a>
+
 
 
 
