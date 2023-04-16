@@ -29,9 +29,7 @@ rs2 = st2.executeQuery("select prod_name, current_price from listings natural jo
 				margin: 0;
 				padding: 0;
 				background-color: #CC0033;
-				background-image: url('../../images/Rutgerslogo.png');
 				
-				background-repeat: repeat;
 		}
 		p{
 		color: #FFFFFF;
