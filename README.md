@@ -12,7 +12,7 @@ Download MySQL From the following link. Make sure your system is selected, the c
 1. Setup Type - Developer Default
 a.  Next
 2. Check Requirements - No Need To Select Anything
-a. Next (ignore any pop up shown, and proceed)
+  a. Next (ignore any pop up shown, and proceed)
 3. Download - Execute
 a. Wait for Downloads to finish
 b. Next Button
