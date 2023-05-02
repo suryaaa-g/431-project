@@ -14,8 +14,8 @@
 </head>
 <style>
 body {
-	background-color: #e9bcb7;
-	background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
+	/* background-color: #e9bcb7; */
+	background-image: linear-gradient(315deg, #e01223 0%, #e63c4a 74%);
 }
 
 h1, p, h2, label {

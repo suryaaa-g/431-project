@@ -54,7 +54,7 @@ String query = "select * from listings l natural join (select * from items i nat
 // Create the query and insert the proper values afterwards
 %>
 
-<h2 class="text-center"><strong>Retrieve data from database in jsp</strong></h2>
+<h2 class="text-center"><strong>Browse Products</strong></h2>
 
 <form action="../../BuyItemServlet" method="POST">
 	<table  class="table table-bordered">
@@ -136,7 +136,7 @@ String query = "select * from listings l natural join (select * from items i nat
 
 			<%
 			String test = rs.getString("item_id");
-			out.println("PRoduct id's are" + test);
+			/* out.println("PRoduct id's are" + test); */
 			int testID = Integer.parseInt(test);
 			%>
 			<td>
